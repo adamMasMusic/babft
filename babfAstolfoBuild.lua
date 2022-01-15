@@ -17474,18 +17474,19 @@ for current = 1, 17445 do
     local y = vTable["voxel"..current][2]
     local z = vTable["voxel"..current][3]
 
+	print(x..","..y..","..z)
+
     local blockType = vTable["voxel"..current][10]
     local amountOfBlocks = player.Data.PlasticBlock.Value
     local plotCords = CFrame.new(x, y, z)
+	print(plotCords)
     local anchored = true --always true
     local merge = 1 -- always 1
     local placeEvent = game:GetService("Players")[playerName].Backpack:WaitForChild("BuildingTool").RF
     placeEvent:InvokeServer(blockType, amountOfBlocks, team, plotCords, anchored, merge)
 
     local placedBlock = game:GetService("Workspace"):WaitForChild("PlasticBlock")
-	print(placedBlock)
     local placedBlockCFrame = placedBlock.PPart.CFrame
-	print(placedBlockCFrame)
 
     local sx = vTable["voxel"..current][7]
     local sy = vTable["voxel"..current][8]
