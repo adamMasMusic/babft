@@ -17473,7 +17473,7 @@ for current = 1, 17445 do
     local x = vTable["voxel"..current][1]
     local y = vTable["voxel"..current][2]
     local z = vTable["voxel"..current][3]
-
+	print(current)
 	print(x..","..y..","..z)
 
     local blockType = vTable["voxel"..current][10]
@@ -17496,7 +17496,7 @@ for current = 1, 17445 do
     local scaleEvent = game:GetService("Players")[playerName].Backpack:WaitForChild("ScalingTool").RF
     scaleEvent:InvokeServer(placedBlock, size, placedBlockCFrame)
 
-    placedBlock.Name = "placed"
+    placedBlock.Name = "placed"..current
 
     local r = vTable["voxel"..current][4]
     local g = vTable["voxel"..current][5]
@@ -17505,7 +17505,7 @@ for current = 1, 17445 do
     local paint = 
         { [1] = 
             {
-                [1] = game:GetService("Workspace").placed, 
+                [1] = game:GetService("Workspace").placed..current, 
                 [2] = Color3.new(r, g, b)
             }
         }
